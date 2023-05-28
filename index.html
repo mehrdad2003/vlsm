@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>محاسبه VLSM</title>
+ 
+  <meta charset="UTF-8">
+  <meta name="description" content="محاسبه آنلاین VLSM">
+  <meta name="keywords" content="VLSM">
+  <meta name="author" content="MehrdadZare">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/label-float.css">
+  <link rel="stylesheet" href="styles/table.css">
+
+  <script src="scripts/namespaces.js" defer></script>
+  <script src="scripts/value-getters.js" defer></script>
+
+  <script src="scripts/templates/utils.js" defer></script>
+  <script src="scripts/templates/table-template.js" defer></script>
+  <script src="scripts/templates/subnet-list-template.js" defer></script>
+
+  <script src="scripts/validation.js" defer></script>
+  <script src="scripts/ip-operations.js" defer></script>
+  <script src="scripts/vlsm-table.js" defer></script>
+  <script src="scripts/buttons.js" defer></script>
+  <script src="scripts/populate.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <form>
+      <fieldset>
+        <legend>جدول نمایش</legend>
+        <div class="form-multicheckbox">
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-name" checked>
+            <label for="checkbox-name">name</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-size" checked>
+            <label for="checkbox-size">size</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-max" checked>
+            <label for="checkbox-max">max</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-network" checked>
+            <label for="checkbox-network">network</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-first">
+            <label for="checkbox-first">first</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-last">
+            <label for="checkbox-last">last</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-broadcast" checked>
+            <label for="checkbox-broadcast">broadcast</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-mask" checked>
+            <label for="checkbox-mask">mask</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-prefix" checked>
+            <label for="checkbox-prefix">prefix</label>
+          </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="checkbox-next">
+            <label for="checkbox-next">next</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>آدرس شبکه وماسک</legend>
+        <div class="form-field">
+          <div class="float-field">
+            <input type="text" id="ip-block" class="float-input" placeholder="block address" required autofocus>
+            <label for="ip-block" class="float-label" data-content="block address">
+              <span class="float-hidden">block address</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-field">
+          <div class="float-field">
+            <input type="text" id="mask-block" class="float-input" placeholder="mask or prefix">
+            <label for="ip-block" class="float-label" data-content="mask or prefix">
+              <span class="float-hidden">mask or prefix</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>زیرشبکه</legend>
+        <div class="minplus">
+          <button type="button" id="button-minus" class="button-mini">-</button>
+          <button type="button" id="button-plus" class="button-mini">+</button>
+        </div>
+
+      
+        <div id="subnet-list"></div>
+
+      </fieldset>
+
+      <button type="button" id="button-generate">ایجاد کن</button>
+    </form>
+
+  
+    <div id="table-container" class="table-container"></div>
+
+  </main>
+</body>
+
+</html>
