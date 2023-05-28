@@ -13,8 +13,7 @@
 
 body {
   font-family: Montserrat, sans-serif;
-  overflow: auto;
-  white-space: nowrap;
+  overflow-x: scroll;
 }
 
 main {
